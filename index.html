@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neil Alvin Medallon | IT Specialist & ML Enthusiast</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #7c3aed;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--light);
+            background: var(--darker);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .wave {
+            font-size: 3rem;
+            display: inline-block;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-20deg); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 1rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        /* Education & Experience Cards */
+        .timeline-item {
+            background: var(--dark);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .timeline-item h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .meta {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            margin-left: 1.5rem;
+            color: var(--gray);
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--dark);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: border-color 0.3s;
+        }
+
+        .skill-category:hover {
+            border-color: var(--primary);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        /* Research Section */
+        .research-card {
+            background: linear-gradient(135deg, var(--dark) 0%, rgba(124, 58, 237, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .research-card h3 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .research-card .year {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            background: var(--dark);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        .contact-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--light);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        footer p {
+            color: var(--gray);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* GitHub Stats */
+        .github-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .github-stats img {
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="wave">👋</div>
+            <h1>Hi there, I'm Neil Alvin Medallon</h1>
+            <p class="subtitle">IT Specialist & Machine Learning Enthusiast</p>
+            <p>Results-driven IT Specialist and Machine Learning Enthusiast skilled in AI model deployment, data analysis, and network infrastructure. Passionate about building intelligent systems and optimizing IT performance through high-performance programming and data-driven solutions.</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Education Section -->
+        <section id="education">
+            <div class="section-header">
+                <h2>🎓 Education</h2>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <div class="meta">Laguna State Polytechnic University, Los Baños Campus | 2021 - 2025</div>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Senior High School - Information and Communication Technology</h3>
+                <div class="meta">CARD-MRI Development Institute Inc. | 2019 - 2021</div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-header">
+                <h2>💼 Professional Experience</h2>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Information Systems Instructor</h3>
+                <div class="meta">CARD-MRI Development Institute Inc., Tranca Bay, Laguna | 2025</div>
+                <ul>
+                    <li>Teaching Introduction to Computing to first-year students, covering fundamental computing concepts, digital literacy, and basic problem-solving using technology</li>
+                    <li>Instructing third-year students in Data Mining, focusing on extracting meaningful patterns, insights, and knowledge from large datasets using analytical and computational techniques</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h3>IT Specialist & Software Developer</h3>
+                <div class="meta">NEXTVAS - Calamba, Laguna | 2024 - 2025</div>
+                <ul>
+                    <li>Conducted daily IT audits, improving equipment tracking accuracy by 15% and network reliability through proactive monitoring</li>
+                    <li>Oversee network infrastructure including switches, routers, MikroTik devices, and firewalls to maintain secure and stable connectivity</li>
+                    <li>Developed a custom Python tool to detect and monitor network activity in real-time, enhancing network visibility and diagnostics</li>
+                    <li>Created a real-time employee screen monitoring system that reduced unproductivity time by 20%</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Intern - Software Developer</h3>
+                <div class="meta">Maquiling Builders Depot - Los Baños, Laguna | 2024</div>
+                <ul>
+                    <li>Developed an OCR solution using Gemini's multimodal capabilities to accurately extract and analyze text from images</li>
+                    <li>Designed an efficient workflow to convert handwritten and printed documents into machine-readable formats</li>
+                    <li>Implemented the system to improve data processing and accessibility</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research">
+            <div class="section-header">
+                <h2>🔬 Research & Thesis</h2>
+            </div>
+
+            <div class="research-card">
+                <h3>Exploration of Satellite Spectral Bands in Estimation of Chlorophyll-a Concentration in the Selected Crater Lakes (Gunao and Tikub) of Quezon Province: A Machine Learning Approach</h3>
+                <div class="year">2024</div>
+                <ul>
+                    <li>Developed a deep learning-based approach for monitoring Chlorophyll-a (Chl-a) concentrations in Gunao Lake using Sentinel-2A satellite data and in-situ measurements</li>
+                    <li>Designed and implemented predictive models using XGBoost, LSTM, and hybrid XGBoost-LSTM to improve Chl-a estimation accuracy</li>
+                    <li>Applied this system to support freshwater conservation and enhance water quality monitoring</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-header">
+                <h2>🛠️ Technical Skills</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Java</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Flask</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <div class="skill-tags">
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Keras</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">LLM</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Data Science</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Feature Engineering</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Networking & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="tag">MikroTik</span>
+                        <span class="tag">Firewalls</span>
+                        <span class="tag">Switches</span>
+                        <span class="tag">CCTV Setup</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Automation</h3>
+                    <div class="skill-tags">
+                        <span class="tag">N8N</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Jupyter</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-header">
+                <h2>📫 Contact Me</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <strong>Email</strong><br>
+                    <a href="mailto:neilalvinmedallon@gmail.com">neilalvinmedallon@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📱</div>
+                    <strong>Phone</strong><br>
+                    <a href="tel:09123916562">0912-391-6562</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <strong>Location</strong><br>
+                    Maitim Bay, Laguna 4033, Philippines
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">💼</div>
+                    <strong>LinkedIn</strong><br>
+                    <a href="https://linkedin.com/in/neil-alvin-medallon" target="_blank">Neil Alvin Medallon</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">🐙</div>
+                    <strong>GitHub</strong><br>
+                    <a href="https://github.com/NeilAlvn" target="_blank">@NeilAlvn</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Stats -->
+        <section>
+            <div class="section-header">
+                <h2>📊 GitHub Stats</h2>
+            </div>
+            <div class="github-stats">
+                <img src="https://github-readme-stats.vercel.app/api?username=NeilAlvn&show_icons=true&theme=tokyonight" alt="GitHub Stats">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=NeilAlvn&theme=tokyonight" alt="GitHub Streak">
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>⭐️ From <a href="https://github.com/NeilAlvn" target="_blank">@NeilAlvn</a></p>
+        <p>&copy; 2025 Neil Alvin Medallon. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .skill-category, .research-card, .contact-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
