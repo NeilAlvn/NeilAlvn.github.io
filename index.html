@@ -28,6 +28,99 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header decorative elements */
+        .site-header::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -250px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .site-header::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -50px;
+            pointer-events: none;
+        }
+
+        .header-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .header-shape {
+            position: absolute;
+            opacity: 0.15;
+        }
+
+        .header-shape-1 {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            top: 50%;
+            left: 15%;
+            transform: translateY(-50%) rotate(45deg);
+            animation: headerFloat 4s ease-in-out infinite;
+        }
+
+        .header-shape-2 {
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            top: 30%;
+            right: 25%;
+            animation: headerFloat 5s ease-in-out infinite reverse;
+        }
+
+        .header-shape-3 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            top: 60%;
+            right: 10%;
+            animation: headerFloat 6s ease-in-out infinite;
+        }
+
+        .header-shape-4 {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 6px;
+            top: 20%;
+            left: 30%;
+            transform: rotate(20deg);
+            animation: headerFloat 4.5s ease-in-out infinite;
+        }
+
+        @keyframes headerFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .header-container {
@@ -37,18 +130,45 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            position: relative;
         }
 
         .logo h1 {
             font-size: 24px;
             color: white;
             font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo h1::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, transparent 100%);
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover h1::after {
+            transform: scaleX(1);
         }
 
         .logo p {
             font-size: 14px;
             color: #bbb;
             margin-top: 4px;
+            position: relative;
+            z-index: 1;
         }
 
         /* Mobile Menu Toggle */
@@ -79,11 +199,29 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.5s ease;
+        }
+
+        nav a:hover::before {
+            left: 100%;
         }
 
         nav a:hover {
             background: rgba(255,255,255,0.1);
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         nav a i {
@@ -578,6 +716,15 @@
                 display: block;
             }
 
+            .header-shapes {
+                display: none;
+            }
+
+            .site-header::before,
+            .site-header::after {
+                display: none;
+            }
+
             nav {
                 position: absolute;
                 top: 100%;
@@ -863,6 +1010,14 @@
 <body>
     <!-- HEADER -->
     <header class="site-header">
+        <!-- Decorative Header Shapes -->
+        <div class="header-shapes">
+            <div class="header-shape header-shape-1"></div>
+            <div class="header-shape header-shape-2"></div>
+            <div class="header-shape header-shape-3"></div>
+            <div class="header-shape header-shape-4"></div>
+        </div>
+
         <div class="header-container">
             <div class="logo">
                 <h1>Neil Alvin Medallon</h1>
