@@ -138,6 +138,19 @@
             position: relative;
         }
 
+        .logo-image {
+            height: 50px;
+            width: auto;
+            display: block;
+            transition: all 0.3s ease;
+            filter: brightness(1);
+        }
+
+        .logo-image:hover {
+            filter: brightness(1.1);
+            transform: scale(1.05);
+        }
+
         .logo h1 {
             font-size: 24px;
             color: white;
@@ -841,6 +854,10 @@
                 padding: 0 15px;
             }
 
+            .logo-image {
+                height: 40px;
+            }
+
             .logo h1 {
                 font-size: 20px;
             }
@@ -1020,8 +1037,7 @@
 
         <div class="header-container">
             <div class="logo">
-                <h1>Neil Alvin Medallon</h1>
-                <p>IT Specialist & ML Enthusiast</p>
+                <img src="https://raw.githubusercontent.com/NeilAlvn/NeilAlvn/main/namlogo.png" alt="Neil Alvin Medallon Logo" class="logo-image">
             </div>
             <button class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
