@@ -13,6 +13,49 @@
             overflow: hidden;
             min-height: 72px;
             max-height: 72px;
+            position: relative;
+            cursor: help;
+        }
+
+        .project-description-wrapper {
+            position: relative;
+        }
+
+        .project-description-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+            width: max-content;
+            max-width: 400px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            pointer-events: none;
+        }
+
+        .project-description-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: #2d2d2d;
+        }
+
+        .project-description-wrapper:hover .project-description-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
         }
 
         .project-image-placeholder {
@@ -1386,7 +1429,12 @@
                     </div>
                     <div class="project-content">
                         <h3>Chlorophyll-a Estimation System</h3>
-                        <p class="project-description">Deep learning-based water quality monitoring system using satellite imagery and machine learning models to estimate Chlorophyll-a concentrations in crater lakes.</p>
+                        <div class="project-description-wrapper">
+                            <p class="project-description">Deep learning-based water quality monitoring system using satellite imagery and machine learning models to estimate Chlorophyll-a concentrations in crater lakes.</p>
+                            <div class="project-description-tooltip">
+                                Deep learning-based water quality monitoring system using satellite imagery and machine learning models to estimate Chlorophyll-a concentrations in crater lakes.
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">TensorFlow</span>
@@ -1414,7 +1462,12 @@
 
                     <div class="project-content">
                         <h3>Pamper & Relax Spa</h3>
-                        <p class="project-description">Web-based appointment and spa management system with inventory tracking, transaction monitoring, and convenient booking platform for customers.</p>
+                        <div class="project-description-wrapper">
+                            <p class="project-description">Web-based appointment and spa management system with inventory tracking, transaction monitoring, and convenient booking platform for customers.</p>
+                            <div class="project-description-tooltip">
+                                Pamper & Relax Spa is a web-based appointment and spa management system designed to support both customers and business operations. The website allows users to browse available spa services and products, schedule appointments by selecting a date, time, and service, and submit payment proof for booking confirmation. On the administrative side, it supports inventory tracking, transaction and sales monitoring, and appointment management. Overall, the system streamlines spa operations while providing customers with a convenient and user-friendly booking and information platform.
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="project-tag">PHP</span>
                             <span class="project-tag">MYSQL</span>
@@ -1441,7 +1494,12 @@
                     </div>
                     <div class="project-content">
                         <h3>Eye Blink-Pattern Detection System</h3>
-                        <p class="project-description">Real-time eye blink detection system using computer vision to monitor patterns and assess cognitive states, fatigue, and eye strain through comprehensive analysis.</p>
+                        <div class="project-description-wrapper">
+                            <p class="project-description">Real-time eye blink detection system using computer vision to monitor patterns and assess cognitive states, fatigue, and eye strain through comprehensive analysis.</p>
+                            <div class="project-description-tooltip">
+                                A real-time eye blink detection and analysis system using computer vision and machine learning. This system monitors eye blink patterns to assess cognitive states, detect fatigue, and identify potential issues like eye strain or stress through comprehensive JSON logging.
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">Computer Vision</span>
@@ -1464,7 +1522,12 @@
                     </div>
                     <div class="project-content">
                         <h3>OCR Document Processor</h3>
-                        <p class="project-description">Intelligent document processing system using Gemini's multimodal AI to extract and analyze text from handwritten and printed documents with high accuracy.</p>
+                        <div class="project-description-wrapper">
+                            <p class="project-description">Intelligent document processing system using Gemini's multimodal AI to extract and analyze text from handwritten and printed documents with high accuracy.</p>
+                            <div class="project-description-tooltip">
+                                Intelligent document processing system using Gemini's multimodal AI to accurately extract and analyze text from handwritten and printed documents. Designed with an efficient workflow to convert documents into machine-readable formats, improving data processing and accessibility.
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">Gemini AI</span>
@@ -1487,7 +1550,12 @@
                     </div>
                     <div class="project-content">
                         <h3>AI Workflow Automation</h3>
-                        <p class="project-description">Automated workflow solution using N8N to streamline business processes, integrate multiple platforms, and reduce manual tasks through intelligent automation.</p>
+                        <div class="project-description-wrapper">
+                            <p class="project-description">Automated workflow solution using N8N to streamline business processes, integrate multiple platforms, and reduce manual tasks through intelligent automation.</p>
+                            <div class="project-description-tooltip">
+                                Automated workflow solution using N8N to streamline business processes, integrate multiple platforms, and reduce manual tasks through intelligent automation. Designed to improve operational efficiency and connect various business tools seamlessly.
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="project-tag">N8N</span>
                             <span class="project-tag">API Integration</span>
