@@ -6,6 +6,7 @@
     <title>Neil Alvin Medallon | IT Specialist & ML Enthusiast</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* PROJECT DESCRIPTION TOOLTIP - SPEECH BUBBLE STYLE */
         .project-description {
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -14,48 +15,66 @@
             min-height: 72px;
             max-height: 72px;
             position: relative;
-            cursor: help;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
         .project-description-wrapper {
             position: relative;
+            margin-bottom: 18px;
         }
 
         .project-description-tooltip {
             position: absolute;
             bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-10px);
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
+            left: 0;
+            right: 0;
+            margin-bottom: 12px;
+            background: white;
+            color: #333;
+            padding: 15px 18px;
+            border-radius: 12px;
             font-size: 14px;
             line-height: 1.6;
-            width: max-content;
-            max-width: 400px;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 1000;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-            pointer-events: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border: 2px solid #1a1a1a;
         }
 
+        /* Tooltip arrow - black border */
+        .project-description-tooltip::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 30px;
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid #1a1a1a;
+        }
+
+        /* Tooltip arrow - white fill */
         .project-description-tooltip::after {
             content: '';
             position: absolute;
             top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 8px solid transparent;
-            border-top-color: #2d2d2d;
+            left: 32px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid white;
+            margin-top: -1px;
         }
 
         .project-description-wrapper:hover .project-description-tooltip {
             opacity: 1;
             visibility: visible;
-            transform: translateX(-50%) translateY(-5px);
+            margin-bottom: 8px;
         }
 
         .project-image-placeholder {
@@ -645,18 +664,19 @@
             font-size: 15px;
         }
 
-        /* PROJECT CARDS - UNIFORM HEIGHT FIX */
+        /* PROJECT CARDS - UNIFORM HEIGHT WITH TOOLTIPS */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 25px;
             margin-bottom: 40px;
+            overflow: visible;
         }
 
         .project-card {
             background: white;
             border-radius: 12px;
-            overflow: hidden;
+            overflow: visible;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             border: 1px solid #e9e9e9;
             transition: all 0.3s;
@@ -668,6 +688,7 @@
         .project-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            z-index: 10;
         }
 
         .project-image {
@@ -681,6 +702,7 @@
             position: relative;
             overflow: hidden;
             flex-shrink: 0;
+            border-radius: 12px 12px 0 0;
         }
 
         .project-image img {
@@ -709,6 +731,8 @@
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            overflow: visible;
+            position: relative;
         }
 
         .project-content h3 {
@@ -1520,14 +1544,14 @@
                     <div class="project-image-placeholder">
                         <img 
                             src="https://raw.githubusercontent.com/NeilAlvn/NeilAlvn.github.io/main/images/monsys.png" 
-                            alt="Eye Blink-Pattern Detection System"
+                            alt="BPO Company Monitoring System"
                             class="project-image-img"
                         >
                     </div>
                     <div class="project-content">
                         <h3>BPO Company Monitoring System</h3>
                         <div class="project-description-wrapper">
-                            <p class="project-description">A comprehensive real-time PC monitoring system designed for BPO (Business Process Outsourcing) companies to track and monitor computer performance metrics across multiple workstations. The system provides live visualization of CPU usage, memory consumption, disk activity, and other critical performance indicators.</p>
+                            <p class="project-description">A comprehensive real-time PC monitoring system designed for BPO (Business Process Outsourcing) companies to track and monitor computer performance metrics across multiple workstations.</p>
                             <div class="project-description-tooltip">
                                 A comprehensive real-time PC monitoring system designed for BPO (Business Process Outsourcing) companies to track and monitor computer performance metrics across multiple workstations. The system provides live visualization of CPU usage, memory consumption, disk activity, and other critical performance indicators.
                             </div>
