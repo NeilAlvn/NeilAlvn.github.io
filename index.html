@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neil Alvin Medallon | IT Specialist & ML Enthusiast</title>
+    <title>Neil Alvin Medallon | Full-Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* PROJECT DESCRIPTION TOOLTIP - SPEECH BUBBLE STYLE */
@@ -1326,8 +1326,8 @@
                 <img src="https://media.licdn.com/dms/image/v2/D5603AQFKE2r0ADSKsw/profile-displayphoto-scale_200_200/B56Zg3k_qgG4Ac-/0/1753279102199?e=2147483647&v=beta&t=pbwGhjthYINRgw9MyfqHJQnuKpGNdsho4O3zCy2rPIY" alt="Neil Alvin Medallon" class="profile-image">
             </div>
             <h2>Hi there, I'm Neil Alvin Medallon</h2>
-            <h3>IT Specialist & Machine Learning Enthusiast</h3>
-            <p>Results-driven IT Specialist and Machine Learning Enthusiast skilled in AI model deployment, data analysis, and network infrastructure. Passionate about building intelligent systems and optimizing IT performance through high-performance programming and data-driven solutions.</p>
+            <h3>Full-Stack Developer</h3>
+            <p>Full-stack developer building production SaaS end-to-end — from database and payments through to app-store launch. I work AI-first, with Claude Code as a core part of my daily workflow. Currently building and running Farmsy, a subscription platform with ~8,000 listings live across the Netherlands and Belgium, backed by a foundation in machine learning and network infrastructure.</p>
         </div>
     </section>
 
@@ -1344,12 +1344,12 @@
             <div class="summary-card">
                 <div class="icon"><i class="fas fa-briefcase"></i></div>
                 <h3>Experience</h3>
-                <div class="value">3</div>
+                <div class="value">4</div>
             </div>
             <div class="summary-card">
                 <div class="icon"><i class="fas fa-project-diagram"></i></div>
                 <h3>Projects</h3>
-                <div class="value">4</div>
+                <div class="value">5</div>
             </div>
             <div class="summary-card">
                 <div class="icon"><i class="fas fa-flask"></i></div>
@@ -1392,6 +1392,21 @@
             <div class="section-title">
                 <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
                 <p>Work history and professional achievements</p>
+            </div>
+
+            <div class="content-card">
+                <h3>Freelance Full-Stack Developer</h3>
+                <div class="meta">
+                    <i class="fas fa-building"></i>
+                    Self-employed — Remote | 2026 - Present
+                </div>
+                <ul>
+                    <li>Built and run Farmsy, a production subscription SaaS: interactive map, paywall, admin platform, referral system and public feature-voting roadmap</li>
+                    <li>Engineered a three-rail payments system (Stripe on web, RevenueCat on iOS/Android) with unified entitlements and webhook sync to prevent double-charging</li>
+                    <li>Cleaned and enriched ~8,000 farm records using fuzzy-matching and geospatial (PostGIS) pipelines, with admin tooling to maintain them</li>
+                    <li>Shipped five-language internationalisation, automated trial and win-back email sequences, rate limiting, and EU-compliant analytics and error monitoring</li>
+                    <li>Coordinate a two-developer team through cross-platform release — live on Google Play, iOS in review</li>
+                </ul>
             </div>
 
             <div class="content-card">
@@ -1442,11 +1457,46 @@
             </div>
 
             <div class="projects-grid">
+                <!-- Featured Project - Farmsy -->
+                <div class="project-card">
+                    <div class="project-image-placeholder">
+                        <img
+                            src="https://raw.githubusercontent.com/NeilAlvn/NeilAlvn.github.io/main/images/farmsy.png"
+                            alt="Farmsy — local farm shop discovery platform"
+                            class="project-image-img"
+                        >
+                    </div>
+                    <div class="project-content">
+                        <h3>Farmsy — Local Farm Discovery SaaS</h3>
+                        <div class="project-description-wrapper">
+                            <p class="project-description">Live subscription platform for finding local farm shops across the Netherlands and Belgium. ~8,000 listings, five languages, web app plus iOS and Android.</p>
+                            <div class="project-description-tooltip">
+                                Farmsy is a production subscription SaaS I built and run end-to-end: an interactive map of ~8,000 farm shops across the Netherlands and Belgium, a subscription paywall with free trials, and a full admin platform for managing listings, claims, submissions and support. Payments run across three billing rails — Stripe on web, RevenueCat on iOS and Android — kept in sync by webhooks so a user is never double-charged. Also includes a community feature-voting roadmap, five-language internationalisation, automated trial and win-back email sequences, and EU-compliant analytics. Live on Google Play, with the iOS build in review.
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">Supabase</span>
+                            <span class="project-tag">Stripe</span>
+                            <span class="project-tag">PostGIS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://farmsy.app" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Live Site
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=app.farmsy.android" target="_blank" class="project-link">
+                                <i class="fab fa-google-play"></i> Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image-placeholder">
                         <img
-                            src="https://raw.githubusercontent.com/NeilAlvn/NeilAlvn.github.io/main/images/Satellite_Imagery.png" 
+                            src="https://raw.githubusercontent.com/NeilAlvn/NeilAlvn.github.io/main/images/Satellite_Imagery.png"
                             alt="Chlorophyll-a Estimation System"
                             class="project-image-img"
                         >
@@ -1605,9 +1655,11 @@
                 <div class="skill-card">
                     <h3><i class="fas fa-laptop-code"></i> Programming Languages</h3>
                     <div class="skill-tags">
-                        <span class="tag">Python</span>
+                        <span class="tag">TypeScript</span>
                         <span class="tag">JavaScript</span>
+                        <span class="tag">Python</span>
                         <span class="tag">SQL</span>
+                        <span class="tag">PHP</span>
                         <span class="tag">C++</span>
                         <span class="tag">Java</span>
                     </div>
@@ -1616,9 +1668,33 @@
                 <div class="skill-card">
                     <h3><i class="fas fa-globe"></i> Web Development</h3>
                     <div class="skill-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Tailwind CSS</span>
                         <span class="tag">Flask</span>
                         <span class="tag">Django</span>
-                        <span class="tag">Node.js</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-database"></i> Backend &amp; Data</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Supabase</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">PostGIS</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-credit-card"></i> Payments &amp; SaaS</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Stripe</span>
+                        <span class="tag">RevenueCat</span>
+                        <span class="tag">Subscriptions</span>
+                        <span class="tag">Webhooks</span>
                     </div>
                 </div>
 
@@ -1654,17 +1730,23 @@
                 </div>
 
                 <div class="skill-card">
-                    <h3><i class="fas fa-robot"></i> Automation</h3>
+                    <h3><i class="fas fa-robot"></i> AI-Assisted Development &amp; Automation</h3>
                     <div class="skill-tags">
+                        <span class="tag">Claude Code</span>
+                        <span class="tag">Cursor</span>
+                        <span class="tag">Multi-Agent Workflows</span>
                         <span class="tag">N8N</span>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <h3><i class="fas fa-tools"></i> Tools &amp; Platforms</h3>
                     <div class="skill-tags">
                         <span class="tag">Git</span>
+                        <span class="tag">Vercel</span>
                         <span class="tag">Docker</span>
+                        <span class="tag">Sentry</span>
+                        <span class="tag">PostHog</span>
                         <span class="tag">VS Code</span>
                         <span class="tag">Jupyter</span>
                     </div>
